@@ -22,7 +22,8 @@ new Vue ({
     el: "#app",
     data: {
         toDoListItem: toDoList,
-        inputText: textInside,
+        inputText: newItem,
+        textInside: ""
     },
     methods: {
         deleteItem(index) {
@@ -31,7 +32,7 @@ new Vue ({
         addNewItem(){
             this.toDoListItem.push(
                 {
-                    text: this.inputText,
+                    text: this.textInside,
                     done: false,
                 }
             )
