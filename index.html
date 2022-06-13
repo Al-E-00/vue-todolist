@@ -5,13 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.css' integrity='sha512-F5fn88UDJWd0T1GwpnIpbuFuSxCgXNnJhIihkiWeqYUyLt3oPUaYzL774VjL7eGj8ktZCZQS//txAxgokiz1Lw==' crossorigin='anonymous'/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js' integrity='sha512-o9SZrtqlGkpa7EF+dDrNjEdRFFYhymlrBzDKpolHNolxsyx0IcXAbEm9i1e8QpoiMgEdKZVtY8XiK1t8i6jVDA==' crossorigin='anonymous'></script>
     <title>ToDo List</title>
 </head>
 <body>
     
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                        ToDoList
+                        </div>
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item" v-for="(item, i) in toDoListItem">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" :id="'flexCheckDefault' + 'i'" v-model="item.done">
+                                <label class="form-check-label" :class="{
+                                    'text-decoration-line-through': item.done,
+                                    'text-secondary': item.done
+                                }"
+                                :for="'flexCheckDefault' + 'i'">
+                                </label>
+                                {{toDoListItem[i].text}}
+                            </div>
+                        </li>
+                </div>
+            </div>
+        </div>
 
-    <script src="app.js"></script>
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
+
+
