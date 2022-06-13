@@ -22,15 +22,27 @@ new Vue ({
     el: "#app",
     data: {
         toDoListItem: toDoList,
+        inputText: newItem,
     },
     methods: {
         deleteItem(index) {
             this.toDoListItem.splice(index, 1);
+        },
+        addNewItem(){
+            this.toDoListItem.push(
+                {
+                    text: this.inputText,
+                    done: false,
+                }
+            )
         }
     }
 })
 
 /* 
-Visualizzare a fianco ad ogni item una “x”: cliccando su di essa, 
-senza chiedere all’utente conferma, il todo viene rimosso dalla lista.
+Predisporre un campo di input 
+testuale (sempre visibile) e un pulsante 
+“aggiungi”: cliccando sul pulsante, il testo
+ digitato viene letto e utilizzato per creare un nuovo todo, 
+ che quindi viene aggiunto alla lista dei todo esistenti.
 */
