@@ -35,8 +35,9 @@ new Vue ({
                     text: this.textInside,
                     done: false,
                 }
-            )
-        }
+                ),
+                this.textInside = ""
+            }
     }
 })
 
