@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css' integrity='sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==' crossorigin='anonymous'/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.css' integrity='sha512-F5fn88UDJWd0T1GwpnIpbuFuSxCgXNnJhIihkiWeqYUyLt3oPUaYzL774VjL7eGj8ktZCZQS//txAxgokiz1Lw==' crossorigin='anonymous'/>
     <link rel="stylesheet" href="css/style.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js' integrity='sha512-o9SZrtqlGkpa7EF+dDrNjEdRFFYhymlrBzDKpolHNolxsyx0IcXAbEm9i1e8QpoiMgEdKZVtY8XiK1t8i6jVDA==' crossorigin='anonymous'></script>
@@ -28,8 +29,11 @@
                                     'text-secondary': item.done
                                 }"
                                 :for="'flexCheckDefault' + 'i'">
-                                {{toDoListItem[i].text}}
+                                {{item.text}}
                                 </label>
+                                <button class="btn btn-sm btn-danger px-1 py-0" @click="deleteItem(i)">
+                                    <i class="fa-solid fa-x fa-sm"></i>
+                                </button>
                             </div>
                         </li>
                 </div>

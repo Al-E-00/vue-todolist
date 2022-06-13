@@ -23,10 +23,14 @@ new Vue ({
     data: {
         toDoListItem: toDoList,
     },
+    methods: {
+        deleteItem(index) {
+            this.toDoListItem.splice(index, 1);
+        }
+    }
 })
 
 /* 
-Print inside a list, a item for every todo.
-If done propriety = true -> show the text barred
-
+Visualizzare a fianco ad ogni item una “x”: cliccando su di essa, 
+senza chiedere all’utente conferma, il todo viene rimosso dalla lista.
 */
