@@ -37,8 +37,8 @@
                             </div>
                         </li>
                         <div class="input-group mt-5">
-                            <input type="text" class="form-control" placeholder="Add new item" id="newItem" v-model="textInside">
-                            <button class="btn btn-outline-primary" type="button" id="button-add" @click="addNewItem">+</button>
+                            <input type="text" class="form-control" placeholder="Add new item" id="newItem" v-model="textInside" @keyup.enter="addNewItem">
+                            <button class="btn btn-outline-primary" type="button" id="button-add" @click="addNewItem" >+</button>
                         </div>
                     </ul>
 
